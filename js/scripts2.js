@@ -6,8 +6,7 @@ $(document).ready(function() {
     var userInput = $("#romNumeral").val();
     var splitInput = userInput.split('');
     var reverseInput = splitInput.reverse();
-    for (index = 0; index < reverseInput.length; index += 1) {
-      var output = converter(reverseInput[index]);
+
       // output = output.join('');
       reverseInput[index] = output;
     };
@@ -22,17 +21,21 @@ var twoIndexRoman = ['C','CC','CCC','CD','D','DC','DCC','DCCC','CM']
 var threeIndexRoman = ['M','MM','MMM']
 
 function converter(reverseInput) {
-  // if (reverseInput[0] === true) {
-  for (i = 0; i < 9; i++) {
-    for (z = 0; z < 9; z++)
-    if (reverseInput[i] === arabicIndex[z]) {
-    arabicIndex[z] = zeroIndexRoman[z];
-      alert(arabicIndex[z]);
-      return arabicIndex[z]
+    for (index = 0; index < reverseInput.length; index += 1) {
+      var output = converter(reverseInput[index]);
+    for (z = 0; z < 9; z++) {
+      if (reverseInput[0] === arabicIndex[z]) {
+        var resultIndex1 = zeroIndexRoman[z];
+      a lert(resultIndex1);
     }
-  // }
+    if (reverseInput[1] === arabicIndex[z]) {
+      var resultIndex2 = oneIndexRoman[z];
+      alert(resultIndex2);
+    }
+}
 }
 };
+
 //   if (userInput.length === 1 && reverseInput === 1) {
 //     var newInput = userInput.replace(reverseInput, "I");
 //         alert("newInput");
